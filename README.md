@@ -4,6 +4,8 @@ So you want to have `persian date` in your jekyll blog/site ? This plugin provid
 
 Special thanks to [@hzamani](https://github.com/hzamani) for [Parsi Date](https://github.com/hzamani/parsi-date) gem.
 
+[![ohloh.com](https://www.ohloh.net/accounts/322550/widgets/account_detailed.gif)](https://www.ohloh.net/accounts/322550?ref=Detailed)
+
 ## Installation
 
 Add this line to your application's Gemfile:
