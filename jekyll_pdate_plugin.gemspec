@@ -11,7 +11,7 @@ Gem::Specification.new do |spec|
   spec.summary       = %q{add persian date to Liquid filters}
   spec.description   = %q{add pdate_to_string filter to Liquid filters using parsi-date 
 gem}
-  spec.homepage      = ""
+  spec.homepage      = "https://github.com/intuxicated/jekyll_pdate_plugin"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files -z`.split("\x0")
