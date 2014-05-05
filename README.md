@@ -34,6 +34,14 @@ Example: `/path/to/_layouts/post.html`
         {{ content }}
     </div>
 
+### Override default format
+
+Default filter output format is `%A %d %B %Y`. To change this format add following configuration to your `_config.yml`
+
+    ...
+    pdate_filter: "FORMAT"
+
+[Available formats](http://www.ruby-doc.org/stdlib-1.9.3/libdoc/date/rdoc/DateTime.html#method-i-strftime)
 ## Contributing
 
 1. Fork it ( http://github.com/intuxicated/jekyll_pdate_plugin/fork )
