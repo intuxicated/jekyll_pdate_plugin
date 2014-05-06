@@ -1,39 +1,41 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
   <head>
-    <meta charset='utf-8'>
+    <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen" />
-    <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen" />
-    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print" />
+    <title>Jekyll pdate plugin by intuxicated</title>
 
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     <!--[if lt IE 9]>
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
-
-    <title>Jekyll pdate plugin by intuxicated</title>
   </head>
-
   <body>
-    <header>
-      <div class="inner">
+    <div class="wrapper">
+      <header>
         <h1>Jekyll pdate plugin</h1>
-        <h2>This plugin provide pdate_to_string (persian date) filter for Liquid</h2>
-        <a href="https://github.com/intuxicated/jekyll_pdate_plugin" class="button"><small>View project on</small>GitHub</a>
-      </div>
-    </header>
+        <p>This plugin provide pdate_to_string (persian date) filter for Liquid</p>
 
-    <div id="content-wrapper">
-      <div class="inner clearfix">
-        <section id="main-content">
-          <h1>
+        <p class="view"><a href="https://github.com/intuxicated/jekyll_pdate_plugin">View the Project on GitHub <small>intuxicated/jekyll_pdate_plugin</small></a></p>
+
+
+        <ul>
+          <li><a href="https://github.com/intuxicated/jekyll_pdate_plugin/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/intuxicated/jekyll_pdate_plugin/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/intuxicated/jekyll_pdate_plugin">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
+        <h1>
 <a name="jekyllpdateplugin" class="anchor" href="#jekyllpdateplugin"><span class="octicon octicon-link"></span></a>JekyllPdatePlugin</h1>
 
 <p>So you want to have <code>persian date</code> in your jekyll blog/site ? This plugin provide <code>pdate_to_string</code> filter for <code>Liquid</code>. </p>
 
 <p>Special thanks to <a href="https://github.com/hzamani">@hzamani</a> for <a href="https://github.com/hzamani/parsi-date">Parsi Date</a> gem.</p>
+
+<p><a href="https://www.ohloh.net/accounts/322550?ref=Detailed"><img src="https://www.ohloh.net/accounts/322550/widgets/account_detailed.gif" alt="ohloh.com"></a></p>
 
 <h2>
 <a name="installation" class="anchor" href="#installation"><span class="octicon octicon-link"></span></a>Installation</h2>
@@ -56,6 +58,9 @@
 <h2>
 <a name="usage" class="anchor" href="#usage"><span class="octicon octicon-link"></span></a>Usage</h2>
 
+<h3>
+<a name="pdate_to_string-filter" class="anchor" href="#pdate_to_string-filter"><span class="octicon octicon-link"></span></a>pdate_to_string filter</h3>
+
 <p>Use <code>pdate_to_string</code> filter instead of <code>date_to_string</code> filter.</p>
 
 <p>Example: <code>/path/to/_layouts/post.html</code></p>
@@ -71,8 +76,8 @@ layout: default
 &lt;/div&gt;
 </code></pre>
 
-<h3>
-<a name="override-default-format" class="anchor" href="#override-default-format"><span class="octicon octicon-link"></span></a>Override default format</h3>
+<h4>
+<a name="override-default-format" class="anchor" href="#override-default-format"><span class="octicon octicon-link"></span></a>Override default format</h4>
 
 <p>Default filter output format is <code>%A %d %B %Y</code>. To change this format add following configuration to your <code>_config.yml</code></p>
 
@@ -81,6 +86,24 @@ pdate_filter: "FORMAT"
 </code></pre>
 
 <p><a href="http://www.ruby-doc.org/stdlib-1.9.3/libdoc/date/rdoc/DateTime.html#method-i-strftime">Available formats</a></p>
+
+<h3>
+<a name="pnumber-filter" class="anchor" href="#pnumber-filter"><span class="octicon octicon-link"></span></a>pnumber filter</h3>
+
+<p>Simply just use this filter wherever you want to convert english numbers to persian numbers.</p>
+
+<p>Example: <code>/path/to/_layouts/post.html</code></p>
+
+<pre><code>---
+layout: default
+---
+&lt;h2&gt;{{ page.title | pnumber }}&lt;/h2&gt;
+&lt;p class="meta"&gt;{{ page.date | pdate_to_string | pnumber }}&lt;/p&gt;
+
+&lt;div class="post"&gt;
+    {{ content }}
+&lt;/div&gt;
+</code></pre>
 
 <h2>
 <a name="contributing" class="anchor" href="#contributing"><span class="octicon octicon-link"></span></a>Contributing</h2>
@@ -92,25 +115,13 @@ pdate_filter: "FORMAT"
 <li>Push to the branch (<code>git push origin my-new-feature</code>)</li>
 <li>Create new Pull Request</li>
 </ol>
-        </section>
-
-        <aside id="sidebar">
-          <a href="https://github.com/intuxicated/jekyll_pdate_plugin/zipball/master" class="button">
-            <small>Download</small>
-            .zip file
-          </a>
-          <a href="https://github.com/intuxicated/jekyll_pdate_plugin/tarball/master" class="button">
-            <small>Download</small>
-            .tar.gz file
-          </a>
-
-          <p class="repo-owner"><a href="https://github.com/intuxicated/jekyll_pdate_plugin"></a> is maintained by <a href="https://github.com/intuxicated">intuxicated</a>.</p>
-
-          <p>This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the Architect theme by <a href="https://twitter.com/jasonlong">Jason Long</a>.</p>
-        </aside>
-      </div>
+      </section>
+      <footer>
+        <p>This project is maintained by <a href="https://github.com/intuxicated">intuxicated</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
     </div>
-
-  
+    <script src="javascripts/scale.fix.js"></script>
+    
   </body>
 </html>
