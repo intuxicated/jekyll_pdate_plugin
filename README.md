@@ -20,6 +20,8 @@ Or install it yourself as:
 
 ## Usage
 
+### pdate_to_string filter
+
 Use `pdate_to_string` filter instead of `date_to_string` filter.
 
 Example: `/path/to/_layouts/post.html`
@@ -34,7 +36,7 @@ Example: `/path/to/_layouts/post.html`
         {{ content }}
     </div>
 
-### Override default format
+#### Override default format
 
 Default filter output format is `%A %d %B %Y`. To change this format add following configuration to your `_config.yml`
 
@@ -42,6 +44,23 @@ Default filter output format is `%A %d %B %Y`. To change this format add followi
     pdate_filter: "FORMAT"
 
 [Available formats](http://www.ruby-doc.org/stdlib-1.9.3/libdoc/date/rdoc/DateTime.html#method-i-strftime)
+
+### pnumber filter
+
+Simply just use this filter wherever you want to convert english numbers to persian numbers.
+
+Example: `/path/to/_layouts/post.html`
+
+    ---
+    layout: default
+    ---
+    <h2>{{ page.title | pnumber }}</h2>
+    <p class="meta">{{ page.date | pdate_to_string | pnumber }}</p>
+
+    <div class="post">
+        {{ content }}
+    </div>
+
 ## Contributing
 
 1. Fork it ( http://github.com/intuxicated/jekyll_pdate_plugin/fork )
