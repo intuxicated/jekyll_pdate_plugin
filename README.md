@@ -1,6 +1,6 @@
 # JekyllPdatePlugin
 
-So you want to have `persian date` in your jekyll blog/site ? This plugin provide `pdate_to_string` filter for `Liquid`. 
+So you want to have `persian date` in your jekyll blog/site ? This plugin provide `pdate` filter for `Liquid`.
 
 Special thanks to [@hzamani](https://github.com/hzamani) for [Parsi Date](https://github.com/hzamani/parsi-date) gem.
 
@@ -22,9 +22,9 @@ Or install it yourself as:
 
 ## Usage
 
-### pdate_to_string filter
+### pdate ( or pdate_to_string ) filter
 
-Use `pdate_to_string` filter instead of `date_to_string` filter.
+#### Use `pdate` filter instead of `date` filter:
 
 Example: `/path/to/_layouts/post.html`
 
@@ -32,7 +32,19 @@ Example: `/path/to/_layouts/post.html`
     layout: default
     ---
     <h2>{{ page.title }}</h2>
-    <p class="meta">{{ page.date | pdate_to_string }}</p>
+    <p class="meta">{{ page.date | pdate }}</p>
+
+    <div class="post">
+        {{ content }}
+    </div>
+
+#### Or call pdate with argument:
+
+    ---
+    layout: default
+    ---
+    <h2>{{ page.title }}</h2>
+    <p class="meta">{{ page.date | pdate: "%Y %A %d %B" }}</p>
 
     <div class="post">
         {{ content }}
@@ -46,6 +58,9 @@ Default filter output format is `%A %d %B %Y`. To change this format add followi
     pdate_filter: "FORMAT"
 
 [Available formats](http://www.ruby-doc.org/stdlib-1.9.3/libdoc/date/rdoc/DateTime.html#method-i-strftime)
+
+> **NOTE:**
+> This configuration has a higher priority than calling pdate filter with an argument.
 
 ### pnumber filter
 

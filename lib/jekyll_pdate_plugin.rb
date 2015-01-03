@@ -1,15 +1,18 @@
 # -*- coding: utf-8 -*-
-require "jekyll_pdate_plugin/version"
+require 'jekyll_pdate_plugin/version'
 require 'parsi-date'
 
 module Jekyll
   module PdatePlugin
-    def pdate_to_string(datetime)
-      pdate_format = @context.registers[:site].config['pdate_filter']
-      if pdate_format == nil
-        pdate_format = "%A %d %B %Y"
-      end
-      datetime.to_parsi.strftime pdate_format
+
+    def pdate(datetime, format = '%A %d %B %Y')
+      pdate_to_string(datetime,format)
+    end
+
+    def pdate_to_string(datetime, format = '%A %d %B %Y')
+      config_format = @context.registers[:site].config['pdate_filter']
+      format = config_format unless config_format.nil?
+      datetime.to_parsi.strftime format
     end
 
     def pnumber(number)
