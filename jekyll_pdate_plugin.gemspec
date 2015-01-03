@@ -8,8 +8,8 @@ Gem::Specification.new do |spec|
   spec.version       = Jekyll::PdatePlugin::VERSION
   spec.authors       = ['intuxicated']
   spec.email         = ['mhmd.niknam@gmail.com']
-  spec.summary       = %q{add persian date to Liquid filters}
-  spec.description   = %q{add pdate_to_string filter to Liquid filters using parsi-date gem}
+  spec.summary       = %q{add persian date (jalali date) and persian number to Liquid filters}
+  spec.description   = %q{add pdate for persian date (jalali date) and pnumber for persian number filter to Liquid filters using parsi-date gem}
   spec.homepage      = 'https://github.com/intuxicated/jekyll_pdate_plugin'
   spec.license       = 'MIT'
 
